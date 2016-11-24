@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 DOCKER_LOGIN=$(aws ecr get-login | grep -e 'docker login')
 
