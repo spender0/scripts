@@ -1,10 +1,8 @@
 #!/bin/sh
 
-
 HOST_VAULT_PORT=8200
 HOST_VAULT_CERTS_DIR=/etc/vault/certs
 HOST_VAULT_DATA_DIR=/var/lib/vault
-
 
 mkdir -p $HOST_VAULT_CERTS_DIR && \
 docker run --rm -e COMMON_NAME=mycert -e KEY_NAME=mycert -v $HOST_VAULT_CERTS_DIR:/certs:rw centurylink/openssl && \
