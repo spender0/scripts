@@ -6,7 +6,7 @@ HOST_VAULT_DATA_DIR=/var/lib/vault
 
 mkdir -p $HOST_VAULT_CERTS_DIR && \
 docker run --rm -e COMMON_NAME=mycert -e KEY_NAME=mycert -v $HOST_VAULT_CERTS_DIR:/certs:rw centurylink/openssl && \
-docker rm -f vault && rm $HOST_VAULT_DATA_DIR/* -fr; \
+docker rm -f vault ; rm $HOST_VAULT_DATA_DIR/* -fr; \
 docker run -d \
 --name vault \
 --cap-add=IPC_LOCK \
